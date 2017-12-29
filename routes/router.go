@@ -1,10 +1,11 @@
-package main
+package routes
 
 import (
 	"encoding/json"
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"github.com/siddhant/GoServerTemplate/util"
 )
 
 type Route struct {
@@ -20,7 +21,7 @@ func NewRouter() *mux.Router {
 	router := mux.NewRouter().StrictSlash(true)
 	for _, route := range routes {
 		var handler http.Handler
-		handler = Logger(route.HandlerFunc, route.Name)
+		handler = util.Logger(route.HandlerFunc, route.Name)
 		router.Methods(route.Method).Path(route.Pattern).Handler(handler).Name(route.Name)
 	}
 	var notFound NotFound
