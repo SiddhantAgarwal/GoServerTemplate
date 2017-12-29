@@ -15,5 +15,11 @@ go get -u github.com/gorilla/mux
 
 #### Run server
 ```
-go run *.go
+go build -o server *.go
+./server
+```
+
+#### Run tests
+```
+go test -v
 ```
