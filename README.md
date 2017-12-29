@@ -4,9 +4,14 @@
 
 Simple server template written in Go
 
-Dependecy: gorilla/mux
+Dependecy: [gorilla/mux](https://github.com/gorilla/mux)
 
 install it by running
 ```
 go get -u github.com/gorilla/mux
+```
+
+run by command
+```
+go run *.go
 ```
