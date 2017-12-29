@@ -33,10 +33,9 @@ func NewRouter() *mux.Router {
 func indexWebHandler(w http.ResponseWriter, r *http.Request) {
 	// log.Println(r.URL.Query())
 	// log.Println(mux.Vars(r))
-	w.Header().Set("Content-type", "application/json")
 	mapWelcome := map[string]bool{"isServerDown": false}
 	mapped, _ := json.Marshal(mapWelcome)
-	w.Write(mapped)
+	sendJson(w, mapped)
 }
 
 var routes = Routes{
@@ -46,4 +45,9 @@ var routes = Routes{
 		"/",
 		indexWebHandler,
 	},
+}
+
+func sendJson(w http.ResponseWriter, resp []byte) {
+	w.Header().Set("Content-type", "application/json")
+	w.Write(resp)
 }
