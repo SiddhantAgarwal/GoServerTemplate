@@ -8,10 +8,10 @@ import (
 	"net/http/httptest"
 )
 
-func ExampleServer() {
+func testRoute(route string) {
 	ts := httptest.NewServer(NewRouter())
 	defer ts.Close()
-	res, err := http.Get(ts.URL)
+	res, err := http.Get(ts.URL + route)
 	if err != nil {
 		log.Fatal(err)
 		return
@@ -23,5 +23,14 @@ func ExampleServer() {
 	}
 	res.Body.Close()
 	fmt.Printf("%s", resp)
+}
+
+func ExampleIndex() {
+	testRoute("")
 	// Output:{"isServerDown":false}
+}
+
+func ExampleRouteNotFound() {
+	testRoute("/unknown")
+	// Output:{"Error": "Not Found"}
 }
