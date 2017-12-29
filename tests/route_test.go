@@ -6,10 +6,12 @@ import (
 	"log"
 	"net/http"
 	"net/http/httptest"
+
+	"github.com/siddhant/GoServerTemplate/routes"
 )
 
 func testRoute(route string) {
-	ts := httptest.NewServer(NewRouter())
+	ts := httptest.NewServer(routes.NewRouter())
 	defer ts.Close()
 	res, err := http.Get(ts.URL + route)
 	if err != nil {
