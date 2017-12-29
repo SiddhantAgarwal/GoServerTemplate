@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+    "github.com/siddhant/GoServerTemplate/routes"
 )
 
 func main() {
