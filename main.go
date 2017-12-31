@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/siddhant/GoServerTemplate/routes"
+	"github.com/SiddhantAgarwal/GoServerTemplate/routes"
 )
 
 func main() {

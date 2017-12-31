@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
+	"github.com/SiddhantAgarwal/GoServerTemplate/util"
 	"github.com/gorilla/mux"
-	"github.com/siddhant/GoServerTemplate/util"
 )
 
 type Route struct {
