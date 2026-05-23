@@ -1,6 +1,8 @@
 # GoServerTemplate
 
-[![codebeat badge](https://codebeat.co/badges/9ecb25b4-c1d6-4ce3-a84a-7f5fc1d363a0)](https://codebeat.co/projects/github-com-siddhantagarwal-goservertemplate-master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/SiddhantAgarwal/GoServerTemplate)](https://goreportcard.com/report/github.com/SiddhantAgarwal/GoServerTemplate)
+[![Go Version](https://img.shields.io/github/go-mod/go-version/SiddhantAgarwal/GoServerTemplate)](https://github.com/SiddhantAgarwal/GoServerTemplate/blob/master/go.mod)
+[![License](https://img.shields.io/github/license/SiddhantAgarwal/GoServerTemplate)](https://github.com/SiddhantAgarwal/GoServerTemplate/blob/master/LICENSE)
 
 *Production-ready Go server template with layered architecture, dependency injection, and PostgreSQL support.*
 
