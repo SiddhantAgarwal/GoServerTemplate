@@ -1,10 +1,15 @@
-FROM golang
+# Build stage
+FROM golang:1.26-alpine AS builder
+WORKDIR /app
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+RUN go build -o server ./cmd/server
 
+# Run stage
+FROM alpine:latest
+RUN apk --no-cache add ca-certificates
+WORKDIR /root/
+COPY --from=builder /app/server .
 EXPOSE 8080
-ENV webserver_path /go/src/github.com/SiddhantAgarwal/GoServerTemplate/
-ENV PATH $PATH:$webserver_path
-ADD . /go/src/github.com/SiddhantAgarwal/GoServerTemplate
-
-WORKDIR $webserver_path
-RUN go build -o myapp . 
-ENTRYPOINT ["./myapp"] 
+CMD ["./server"]
